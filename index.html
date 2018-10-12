@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Quote Trivia Game</title>
+    <!--Linking Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!--My CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body background="assets/images/pw_maze_black/blackmaze.png">
+
+    <div class=container>
+        <div class=row>
+            <div class=col>
+                <!-- Card for Game -->
+                <div class="card question-box">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Movie Quote Madness</h5>
+                        <!-- Div for timer -->
+                        <p id="time-left" class="card-text hidden"><span id="timer"></span></p>
+                        <!-- Div to place Question -->
+                        <p id="question" class="lead"></p>
+                        <!-- Div to Place results -->
+                        <div id="results"></div>
+                        <!--Div to Place gif-->
+                        <div id="gif"></div>
+                        <!-- list items to place Answer Choices -->
+                        <ul id="responses" class="list-group list-group-flush answers">
+                            <li class="list-group-item answer-choice" id="answer-a"></li>
+                            <li class="list-group-item answer-choice" id="answer-b"></li>
+                            <li class="list-group-item answer-choice" id="answer-c"></li>
+                            <li class="list-group-item hidden answer-choice" id="restart"></li>
+                        </ul>
+                        <button id="start" class="btn btn-info btn-lg">Start</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class=row>
+            <div class=col>
+                <div id="movie-gif"></div>
+            </div>
+        </div>
+
+    </div>
+    <!--My JavaScript-->
+    <script src="assets/javascript/trivia.js"></script>
+
+</body>
+
+</html>
