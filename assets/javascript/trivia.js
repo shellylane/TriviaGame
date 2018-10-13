@@ -60,7 +60,7 @@ $(document).ready(function () {
 			question: "There goes our last female.",
 			choices: ["Ice Age", "Gone Girl", "Zootopia"],
 			answer: "Ice Age",
-			gif: "assets/images/female.gif"
+			gif: "https://media.giphy.com/media/a1thGdkZkPLbi/giphy.gif"
 		},
 		{
 			question: "She doesn't even go here!",
