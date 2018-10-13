@@ -18,12 +18,12 @@
 
 <body background="assets/images/pw_maze_black/blackmaze.png">
 
-    <div class=container>
+    <div class="container">
         <div class=row>
             <div class=col>
-                <!-- Card for Game -->
-                <div class="card question-box">
-                    <div class="card-body">
+                <!-- Card for Game --> 
+                <div class="card text-center question-box">
+                    <div class="card-body justify-contents-center">
 
                         <h5 class="card-title">Movie Quote Madness</h5>
                         <!-- Div for timer -->
@@ -35,13 +35,15 @@
                         <!--Div to Place gif-->
                         <div id="gif"></div>
                         <!-- list items to place Answer Choices -->
-                        <ul id="responses" class="list-group list-group-flush answers">
+                        <ul id="responses" class="list-group list-group-flush answers hidden">
                             <li class="list-group-item answer-choice" id="answer-a"></li>
                             <li class="list-group-item answer-choice" id="answer-b"></li>
                             <li class="list-group-item answer-choice" id="answer-c"></li>
                             <li class="list-group-item hidden answer-choice" id="restart"></li>
                         </ul>
                         <button id="start" class="btn btn-info btn-lg">Start</button>
+                        <br>
+                        <img id="movie-gif" src="">
                     </div>
 
                 </div>

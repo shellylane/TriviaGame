@@ -4,7 +4,7 @@ $(document).ready(function () {
 	var incorrect = 0;
 	var currentQuestion = 0;
 	var userAnswer = "";
-	var ansTimeout = 2000;
+	var ansTimeout = 4000;
 
 	var myQuestions = [
 		{
@@ -69,22 +69,35 @@ $(document).ready(function () {
 			gif: "assets/images/meanGirls.gif"
 		}];
 
+	// on-click event begin when start button clicked
+	$("#start").on("click", function () {
+		reset();
+		event.preventDefault();
+		//Displays the first question
+		displayQuestions(currentQuestion);
 
-	//Function to submit answers
-	function submitAns() {
-		// debugger;
-		$(".answer-choice").on("click", function (event) {
-			event.preventDefault();
-			userAnswer = $(this).text();
-			stop();
-			console.log("User Asnwer", userAnswer);
-			//run function nextQ
-			nextQ();
-		});
-	};
+		//hide start button by adding hidden class
+		$("#start").addClass("hidden");
+		$("#responses").removeClass("hidden");
+		$("#movie-gif").removeClass("hidden");
+
+		//show timer by removing hidden class
+		$("#time-left").removeClass("hidden");
+		resetTimer();
+
+	});
+
+	$(".answer-choice").on("click", function (event) {
+		event.preventDefault();
+		userAnswer = $(this).text();
+		stop();
+		console.log("User Asnwer", userAnswer);
+		//run function nextQ
+		checkQuestion();
+	});
 
 	//Set up Timer
-	var time = 5;
+	var time = 10;
 
 	var timeInterval;
 
@@ -95,6 +108,8 @@ $(document).ready(function () {
 
 	// Decrement function
 	function decrement() {
+		var correctAnswer = myQuestions[currentQuestion].answer;
+		var currentGif = myQuestions[currentQuestion].gif;
 		//  Decrease time left by one.
 		time--;
 		//Show the time left on screen
@@ -103,15 +118,20 @@ $(document).ready(function () {
 		if (time === 0) {
 			stop();
 			userAnswer = "wrong";
+			$("#results").text("Time's Up! The correct answer was " + correctAnswer);
+			$("#movie-gif").attr("src", currentGif);
 			console.log(userAnswer);
 			console.log("Inside time interval");
+			incorrect++;
+			displayTimer();
+
 			nextQ();
 		};
 	};
 
 	//Reset Timer function
 	function resetTimer() {
-		time = 5;
+		time = 10;
 		$("#timer").text("Time remaining: " + time + " seconds");
 	};
 
@@ -125,34 +145,18 @@ $(document).ready(function () {
 
 
 	function displayQuestions() {
-		debugger;
 		clearResults();
 		clearQ();
 		resetTimer();
+		$("#movie-gif").attr("src", '');
 		$("#responses").removeClass("hidden");
 		$("#question").html(myQuestions[currentQuestion].question);
 		$("#answer-a").html(myQuestions[currentQuestion].choices[0]);
 		$("#answer-b").html(myQuestions[currentQuestion].choices[1]);
 		$("#answer-c").html(myQuestions[currentQuestion].choices[2]);
 		runTimer();
-		submitAns();
 	};
 
-	// on-click event begin when start button clicked
-	$("#start").on("click", function () {
-		reset();
-		event.preventDefault();
-		//Displays the first question
-		displayQuestions(currentQuestion);
-
-		//hide start button by adding hidden class
-		$("#start").addClass("hidden");
-
-		//show timer by removing hidden class
-		$("#time-left").removeClass("hidden");
-		resetTimer();
-
-	});
 
 	//Reset for end of game
 	function reset() {
@@ -175,6 +179,7 @@ $(document).ready(function () {
 		$("#restart").text("Click the Start Button to Play Again");
 		//Restart game
 		reset();
+		$("#movie-gif").addClass("hidden");
 		$("#start").removeClass("hidden");
 		$("#restart").on("click", function () {
 
@@ -197,29 +202,35 @@ $(document).ready(function () {
 	function checkQuestion() {
 		clearQ();
 		var correctAnswer = myQuestions[currentQuestion].answer;
+		var currentGif = myQuestions[currentQuestion].gif;
 
 		if (myQuestions[currentQuestion].answer === userAnswer) {
 			$("#results").text("Congratulations! You chose the right answer!");
 			correct++;
 			displayTimer();
+			$("#movie-gif").attr("src", currentGif);
 		}
 		else if (userAnswer === "wrong") {
 			$("#results").text("Time's Up! The correct answer was " + correctAnswer);
 			incorrect++;
 			displayTimer();
+			$("#movie-gif").attr("src", currentGif);
 		}
 		else {
 			$("#results").text("Wrong! The correct answer was " + correctAnswer);
 			incorrect++;
 			displayTimer();
+			$("#movie-gif").attr("src", currentGif);
 
 		};
+		nextQ();
 	};
 
 
 	//Function to change the question 
 	function nextQ() {
-		checkQuestion();
+		
+		
 		currentQuestion++;
 		//If the count is the same as the length of the question array, the counts reset to 0
 		if (currentQuestion === myQuestions.length) {
@@ -230,14 +241,10 @@ $(document).ready(function () {
 		};
 	};
 
-
-
 	//Function to clear results div
 	function clearResults() {
 		$("#results").empty();
 
 	};
-
-
 
 });
