@@ -11,62 +11,62 @@ $(document).ready(function () {
 			question: "A liger...it's pretty much my favorite animal. It's like a lion and a tiger mixed - bred for its skills in magic.",
 			choices: ["Napoleon Dynamite", "Superbad", "Elf",],
 			answer: "Napoleon Dynamite",
-			gif: "assets/images/Napoleon.gif"
+			gif: "https://media.giphy.com/media/SpO4CwxDqrO8w/giphy.gif"
 		},
 		{
 			question: "I'm just one stomach flu away from my goal weight.",
 			choices: ["Mean Girls", "Clueless", "The Devil Wears Prada"],
 			answer: "The Devil Wears Prada",
-			gif: "assets/images/Devil.gif"
+			gif: "https://media.giphy.com/media/xT0GqLgNaHelUCIUg0/giphy.gif"
 		},
 		{
 			question: "I have nipples, Greg. Could you milk me?",
 			choices: ["Meet the Parents", "Stepbrothers", "Dumb and Dumber"],
 			answer: "Meet the Parents",
-			gif: "assets/images/nipples.gif"
+			gif: "https://media.giphy.com/media/TxG8jhhyb5ACQ/giphy.gif"
 		},
 		{
 			question: "Its just a flesh wound.",
 			choices: ["Princess Bride", "Monty Python and the Holy Grail", "Fight Club"],
 			answer: "Monty Python and the Holy Grail",
-			gif: "assets/images/monty.gif"
+			gif: "https://media.giphy.com/media/5DfGL75M9spG0/giphy.gif"
 		},
 		{
 			question: "There's a jungle cat in the bathroom!",
 			choices: ["Kung Fu Panda", "The Hangover", "Zootopia"],
 			answer: "The Hangover",
-			gif: "assets/images/tiger.gif"
+			gif: "https://media.giphy.com/media/11CWixDVaYrk5i/giphy.gif"
 		},
 		{
 			question: "You sit on a throne of lies.",
 			choices: ["The Lego Movie", "Robin Hood", "Elf"],
 			answer: "Elf",
-			gif: "assets/images/elf.gif"
+			gif: "https://media.giphy.com/media/12NlCFUvTokWXe/giphy.gif"
 		},
 		{
 			question: "I sometimes have a feeling I can do crystal meth, but then I think 'mmm better not'.",
 			choices: ["Pitch Perfect", "Friday", "Zoolander"],
 			answer: "Pitch Perfect",
-			gif: "assets/images/crystalMeth.gif"
+			gif: "https://media.giphy.com/media/Z3SqtKHuUGEpy/giphy.gif"
 		},
 		{
 			question: "I don't know how to put this but I'm kind of a big deal.",
 			choices: ["Doctor Strange", "Black Panther", "Anchorman"],
 			answer: "Anchorman",
-			gif: "assets/images/anchorman.gif"
+			gif: "https://media.giphy.com/media/erldqIniuBYo8/giphy.gif"
 
 		},
 		{
 			question: "There goes our last female.",
 			choices: ["Ice Age", "Gone Girl", "Zootopia"],
 			answer: "Ice Age",
-			gif: "assets/images/lastFemale.gif"
+			gif: "assets/images/female.gif"
 		},
 		{
 			question: "She doesn't even go here!",
 			choices: ["Mean Girls", "10 Things I Hate About You", "Legally Blonde"],
 			answer: "Mean Girls",
-			gif: "assets/images/meanGirls.gif"
+			gif: "https://media.giphy.com/media/69qoNrkAAlx4T9njnX/giphy.gif"
 		}];
 
 	// on-click event begin when start button clicked
