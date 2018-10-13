@@ -136,7 +136,7 @@ $(document).ready(function () {
 	};
 
 	function displayTimer() {
-		$("#timer").text("Answer Review");
+		$("#timer").text('');
 	}
 	//Stop Timer function
 	function stop() {
@@ -148,6 +148,7 @@ $(document).ready(function () {
 		clearResults();
 		clearQ();
 		resetTimer();
+		showResponses ();
 		$("#movie-gif").attr("src", '');
 		$("#responses").removeClass("hidden");
 		$("#question").html(myQuestions[currentQuestion].question);
@@ -208,18 +209,21 @@ $(document).ready(function () {
 			$("#results").text("Congratulations! You chose the right answer!");
 			correct++;
 			displayTimer();
+			hideResposes();
 			$("#movie-gif").attr("src", currentGif);
 		}
 		else if (userAnswer === "wrong") {
 			$("#results").text("Time's Up! The correct answer was " + correctAnswer);
 			incorrect++;
 			displayTimer();
+			hideResposes();
 			$("#movie-gif").attr("src", currentGif);
 		}
 		else {
 			$("#results").text("Wrong! The correct answer was " + correctAnswer);
 			incorrect++;
 			displayTimer();
+			hideResposes();
 			$("#movie-gif").attr("src", currentGif);
 
 		};
@@ -247,4 +251,11 @@ $(document).ready(function () {
 
 	};
 
+	function hideResposes () {
+		$("#responses").addClass("hidden");
+	};
+
+	function showResponses () {
+		$("#responses").removeClass("hidden");
+	};
 });

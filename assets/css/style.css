@@ -19,8 +19,11 @@
 
 #movie-gif {
     align-content: center;
+    max-width: 300px;
+    height: auto;
 }
 
 #responses {
     margin-bottom: 10px;
 }
+
